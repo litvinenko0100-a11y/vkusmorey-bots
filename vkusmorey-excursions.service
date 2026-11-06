@@ -1,0 +1,16 @@
+[Unit]
+Description=Вкус Морей · Прогулки (Telegram @vkusmorey_bot)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/vkusmorey
+Environment=BOT_DIR=/opt/vkusmorey
+EnvironmentFile=/opt/vkusmorey/.env
+ExecStart=/usr/bin/python3 /opt/vkusmorey/bot_excursions.py
+Restart=always
+RestartSec=10
+StartLimitBurst=0
+
+[Install]
+WantedBy=multi-user.target

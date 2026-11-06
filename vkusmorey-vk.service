@@ -1,0 +1,16 @@
+[Unit]
+Description=Вкус Морей · VK-бот (vk.com/club211184771)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/vkusmorey
+Environment=BOT_DIR=/opt/vkusmorey
+EnvironmentFile=/opt/vkusmorey/.env
+ExecStart=/usr/bin/python3 /opt/vkusmorey/bot_vk.py
+Restart=always
+RestartSec=10
+StartLimitBurst=0
+
+[Install]
+WantedBy=multi-user.target
