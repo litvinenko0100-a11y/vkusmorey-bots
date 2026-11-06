@@ -1,0 +1,29 @@
+name: Вкус Морей · боты
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'
+
+jobs:
+  bots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 590
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Запуск ботов (прогулки + морепродукты)
+        env:
+          EXCURSIONS_TOKEN: ${{ secrets.EXCURSIONS_TOKEN }}
+          PRODUCTS_TOKEN: ${{ secrets.PRODUCTS_TOKEN }}
+          BOT_DIR: ${{ github.workspace }}
+        run: |
+          python3 bot_excursions.py &
+          P1=$!
+          python3 bot_products.py &
+          P2=$!
+          echo "Боты запущены: $P1 $P2"
+          wait $P1 $P2
