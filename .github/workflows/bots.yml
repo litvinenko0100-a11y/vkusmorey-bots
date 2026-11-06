@@ -3,7 +3,7 @@ name: Вкус Морей · боты
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 */6 * * *'
+    - cron: '17 */5 * * *'
 
 concurrency:
   group: vkusmorey-bots
@@ -12,7 +12,7 @@ concurrency:
 jobs:
   bots:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 290
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
