@@ -37,6 +37,9 @@ def handle_cb(d,cid):
     if d in CAT:
         price=p.get(KEY[d])
         if not price:
+            # уведомляем администратора: кто и что спрашивает
+            api('sendMessage', chat_id=ADMIN,
+                text=f"🛒 Запрос цены: {CAT[d]}\nПокупатель: {cid}\n\nБот не знает цену — уточни и впиши в prices.json.")
             send(cid,f"📋 {CAT[d]}: уточняем наличие и цену на сегодня. Напишите нам — вышлем актуальный прайс и забронируем.",
                  {"inline_keyboard":[[{"text":"Написать","url":"https://t.me/Vkus_morey51"}]]})
             return
