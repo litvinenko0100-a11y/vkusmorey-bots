@@ -1,0 +1,24 @@
+name: Синхронизация на сервер
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'bot_*.py'
+      - 'prices.json'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Боты подхватят изменения автоматически (шаг ниже) — проверяем синтаксис
+      - run: |
+          python3 -m py_compile bot_excursions.py bot_products.py && echo "Синтаксис OK"
+      - name: Коммит обновлённого прайса обратно (если менялся вручную)
+        run: |
+          git config user.name  "mira-bot"
+          git config user.email "mira-bot@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "sync: обновление прайса и кода" && git push || echo "Изменений нет"
