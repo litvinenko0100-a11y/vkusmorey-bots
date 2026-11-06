@@ -3,19 +3,23 @@ name: Вкус Морей · боты
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '17 */6 * * *'
+
+concurrency:
+  group: vkusmorey-bots
+  cancel-in-progress: false
 
 jobs:
   bots:
     runs-on: ubuntu-latest
-    timeout-minutes: 590
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - name: Запуск ботов (прогулки + морепродукты)
+      - name: Боты Вкус Морей (прогулки + морепродукты)
         env:
           EXCURSIONS_TOKEN: ${{ secrets.EXCURSIONS_TOKEN }}
           PRODUCTS_TOKEN: ${{ secrets.PRODUCTS_TOKEN }}
