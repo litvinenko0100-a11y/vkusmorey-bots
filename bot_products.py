@@ -71,9 +71,12 @@ def handle(u):
     elif txt and not txt.startswith('/'):
         send(cid,'Спасибо! Ответим в течение 15 минут. А пока — каталог:',MENU_BTN)
 
+DEADLINE = time.time() + 50 * 60  # graceful exit -> job concludes success
+
+
 def main():
     off=None
-    while True:
+    while time.time() < DEADLINE:
         pr={'timeout':25,'limit':50}
         if off: pr['offset']=off
         try: r=requests.get(f'{API}/getUpdates',params=pr,timeout=40).json()
