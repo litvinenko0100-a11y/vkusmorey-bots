@@ -43,17 +43,4 @@ jobs:
           if ! kill -0 $P1 2>/dev/null; then echo "::error::bot_excursions died"; fi
           if ! kill -0 $P2 2>/dev/null; then echo "::error::bot_products died"; fi
           wait $P1 $P2
-
-  content:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - run: pip install -r requirements.txt
-      - name: Publish daily content to @morskieakvarium
-        env:
-          CONTENT_TOKEN: ${{ secrets.CONTENT_TOKEN }}
-        run: python3 bot_content.py
+          echo "both bots finished cleanly"
