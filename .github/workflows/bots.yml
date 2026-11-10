@@ -1,4 +1,4 @@
-name: Ð²ÐºÑÑÑ Ð¼Ð¾ÑÐ¹ÐµÐ¹ · Ð±Ð¾ÑÑ‹
+name: VKUSMOREY BOTS
 
 on:
   workflow_dispatch:
@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - name: Health check tokens
+      - name: Token health check
         env:
           EXCURSIONS_TOKEN: ${{ secrets.EXCURSIONS_TOKEN }}
           PRODUCTS_TOKEN: ${{ secrets.PRODUCTS_TOKEN }}
@@ -33,10 +33,7 @@ jobs:
               echo "SECRET $v is set (len=${#val})"
             fi
           done
-          if [ -z "$EXCURSIONS_TOKEN" ] || [ -z "$PRODUCTS_TOKEN" ]; then
-            echo "::warning::One or more secrets are empty - bots will fall back to hardcoded token and conflict on getUpdates"
-          fi
-      - name: Ð‘Ð¾ÑÑ‹ Ð²ÐºÑÐºÑÑÐ¾Ð¹ Ð¼Ð¾ÑÐµÐ¹ (Ð¿ÑÐ¾Ð¾Ð³ÑƒÐ»ÐºÐ¸ + Ð¼Ð¾ÑÐµÐµÐ¿ÑÐ¾Ð¾ÐºÑ‚Ñ‹)
+      - name: Run bots
         env:
           EXCURSIONS_TOKEN: ${{ secrets.EXCURSIONS_TOKEN }}
           PRODUCTS_TOKEN: ${{ secrets.PRODUCTS_TOKEN }}
@@ -51,3 +48,17 @@ jobs:
           if ! kill -0 $P1 2>/dev/null; then echo "::error::bot_excursions died"; fi
           if ! kill -0 $P2 2>/dev/null; then echo "::error::bot_products died"; fi
           wait $P1 $P2
+
+  content:
+    runs-on: ubuntu-latest
+    timeout-minutes: 280
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - name: Publish content to @morskieakvarium
+        env:
+          CONTENT_TOKEN: ${{ secrets.CONTENT_TOKEN }}
+        run: python3 bot_content.py
