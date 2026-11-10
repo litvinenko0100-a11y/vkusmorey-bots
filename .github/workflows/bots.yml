@@ -3,7 +3,7 @@ name: VKUSMOREY BOTS
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 */5 * * *'
+    - cron: '7 * * * *'
 
 concurrency:
   group: vkusmorey-bots
@@ -12,7 +12,7 @@ concurrency:
 jobs:
   bots:
     runs-on: ubuntu-latest
-    timeout-minutes: 290
+    timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -24,14 +24,9 @@ jobs:
           EXCURSIONS_TOKEN: ${{ secrets.EXCURSIONS_TOKEN }}
           PRODUCTS_TOKEN: ${{ secrets.PRODUCTS_TOKEN }}
         run: |
-          echo "=== token check ==="
           for v in EXCURSIONS_TOKEN PRODUCTS_TOKEN; do
             val="${!v}"
-            if [ -z "$val" ]; then
-              echo "SECRET $v is EMPTY"
-            else
-              echo "SECRET $v is set (len=${#val})"
-            fi
+            if [ -z "$val" ]; then echo "SECRET $v is EMPTY"; else echo "SECRET $v ok"; fi
           done
       - name: Run bots
         env:
@@ -44,21 +39,21 @@ jobs:
           python3 bot_products.py &
           P2=$!
           echo "bots started: $P1 $P2"
-          sleep 20
+          sleep 30
           if ! kill -0 $P1 2>/dev/null; then echo "::error::bot_excursions died"; fi
           if ! kill -0 $P2 2>/dev/null; then echo "::error::bot_products died"; fi
           wait $P1 $P2
 
   content:
     runs-on: ubuntu-latest
-    timeout-minutes: 280
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - name: Publish content to @morskieakvarium
+      - name: Publish daily content to @morskieakvarium
         env:
           CONTENT_TOKEN: ${{ secrets.CONTENT_TOKEN }}
         run: python3 bot_content.py
