@@ -5,8 +5,11 @@ API = f'https://api.telegram.org/bot{TOK}'
 CHANNEL = '@morskieakvarium'
 BASE = os.path.dirname(os.path.abspath(__file__))
 QUEUE = os.path.join(BASE, 'content_queue.json')
-STATE = os.path.join(BASE, 'content_state.json')
-MIN_GAP = 4 * 3600
+
+# Публикуем ровно один раз в сутки в 10:00 UTC.
+# Выбор поста детерминирован по номеру дня - state-файл не нужен,
+# поэтому гонка между прогонами и повторные публикации невозможны.
+PUBLISH_HOUR_UTC = 10
 
 
 def api(method, **kw):
@@ -21,48 +24,32 @@ def api(method, **kw):
     return {'ok': False}
 
 
-def load(path, default):
-    try:
-        with open(path, encoding='utf-8') as f:
-            return json.load(f)
-    except Exception:
-        return default
-
-
-def save(path, data):
-    with open(path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=1)
-
-
 def main():
     if not TOK:
         print('no token')
         return
-    items = load(QUEUE, [])
+    now = time.gmtime()
+    if now.tm_hour != PUBLISH_HOUR_UTC:
+        print('not publish hour, skipping (hour=%s)' % now.tm_hour)
+        return
+    try:
+        with open(QUEUE, encoding='utf-8') as f:
+            items = json.load(f)
+    except Exception as e:
+        print('queue error:', e)
+        return
     if not items:
-        print('content queue is empty')
+        print('queue empty')
         return
-    state = load(STATE, {'last_posted': '', 'last_at': 0})
-    now = int(time.time())
-    if now - state.get('last_at', 0) < MIN_GAP:
-        print('gap not reached, skipping')
-        return
-    target = None
-    for it in items:
-        if it.get('id') != state.get('last_posted'):
-            target = it
-            break
-    if not target:
-        print('nothing new')
-        return
-    r = api('sendMessage', chat_id=CHANNEL, text=target['text'], disable_web_page_preview=True)
+    day_index = int(time.time() // 86400)
+    target = items[day_index % len(items)]
+    print('selected:', target.get('id'), 'day_index', day_index)
+    r = api('sendMessage', chat_id=CHANNEL, text=target['text'],
+            disable_web_page_preview=True)
     if r.get('ok'):
-        state['last_posted'] = target['id']
-        state['last_at'] = now
-        save(STATE, state)
-        print('published', target['id'])
+        print('published', target.get('id'), 'msg', r.get('result', {}).get('message_id'))
     else:
-        print('failed', str(r)[:200])
+        print('failed:', str(r)[:250])
 
 
 if __name__ == '__main__':
