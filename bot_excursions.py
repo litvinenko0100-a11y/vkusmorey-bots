@@ -69,9 +69,12 @@ def handle(u):
         api('sendMessage', chat_id=ADMIN, text=f"📩 Заявка на прогулку\n\nОт: {ch.get('first_name','')} (@{ch.get('username','—')})\nТекст: {txt}")
         send(cid,'✅ Заявка отправлена. Андрей подтвердит дату и пришлёт оплату — обычно в течение 15 минут.',MENU)
 
+DEADLINE = time.time() + 50 * 60  # graceful exit -> job concludes success
+
+
 def main():
     off=None
-    while True:
+    while time.time() < DEADLINE:
         pr={'timeout':25,'limit':50}
         if off: pr['offset']=off
         try: r=requests.get(f'{API}/getUpdates',params=pr,timeout=40).json()
