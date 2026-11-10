@@ -1,10 +1,12 @@
 import os, json, time, requests
 
-TOK = os.environ.get('CONTENT_TOKEN', '')
+TOK = os.environ.get('CONTENT_TOKEN') or os.environ.get('EXCURSIONS_TOKEN') or '7795659732:AAFjnsBxLndGWUllspEp-TcFmZ6_k9hKVT4'
 API = f'https://api.telegram.org/bot{TOK}'
 CHANNEL = '@morskieakvarium'
-QUEUE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'content_queue.json')
-STATE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'content_state.json')
+BASE = os.path.dirname(os.path.abspath(__file__))
+QUEUE = os.path.join(BASE, 'content_queue.json')
+STATE = os.path.join(BASE, 'content_state.json')
+MIN_GAP = 4 * 3600
 
 
 def api(method, **kw):
@@ -34,36 +36,33 @@ def save(path, data):
 
 def main():
     if not TOK:
-        print('CONTENT_TOKEN is empty - skipping')
+        print('no token')
         return
     items = load(QUEUE, [])
     if not items:
         print('content queue is empty')
         return
     state = load(STATE, {'last_posted': '', 'last_at': 0})
-    MIN_GAP = 4 * 3600  # не чаще раза в 4 часа
     now = int(time.time())
     if now - state.get('last_at', 0) < MIN_GAP:
-        print('too soon since last post, skipping')
+        print('gap not reached, skipping')
         return
-    # ищем следующий неопубликованный пост
     target = None
     for it in items:
         if it.get('id') != state.get('last_posted'):
             target = it
             break
     if not target:
-        print('nothing new to publish')
+        print('nothing new')
         return
-    r = api('sendMessage', chat_id=CHANNEL, text=target['text'],
-            disable_web_page_preview=True)
+    r = api('sendMessage', chat_id=CHANNEL, text=target['text'], disable_web_page_preview=True)
     if r.get('ok'):
         state['last_posted'] = target['id']
         state['last_at'] = now
         save(STATE, state)
-        print('published:', target['id'])
+        print('published', target['id'])
     else:
-        print('publish failed:', str(r)[:300])
+        print('failed', str(r)[:200])
 
 
 if __name__ == '__main__':
