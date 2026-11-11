@@ -6,6 +6,7 @@ on:
     paths:
       - 'bot_*.py'
       - 'prices.json'
+      - 'content_queue.json'
   workflow_dispatch:
 
 jobs:
@@ -13,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Боты подхватят изменения автоматически (шаг ниже) — проверяем синтаксис
-      - run: |
-          python3 -m py_compile bot_excursions.py bot_products.py && echo "Синтаксис OK"
-      - name: Коммит обновлённого прайса обратно (если менялся вручную)
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Проверяем синтаксис ботов
         run: |
-          git config user.name  "mira-bot"
-          git config user.email "mira-bot@users.noreply.github.com"
-          git add -A
-          git diff --staged --quiet || git commit -m "sync: обновление прайса и кода" && git push || echo "Изменений нет"
+          python3 -m py_compile bot_excursions.py bot_products.py bot_content.py && echo "syntax ok"
+      - name: Валидируем очередь контента
+        run: |
+          python3 -c "import json;d=json.load(open('content_queue.json',encoding='utf-8'));print('posts in queue:',len(d))"
