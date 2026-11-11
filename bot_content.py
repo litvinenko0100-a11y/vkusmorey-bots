@@ -6,10 +6,11 @@ CHANNEL = '@morskieakvarium'
 BASE = os.path.dirname(os.path.abspath(__file__))
 QUEUE = os.path.join(BASE, 'content_queue.json')
 
-# Публикуем ровно один раз в сутки в 10:00 UTC.
+# Публикуем ровно один раз в сутки: cron срабатывает ежечасно в :07 минут,
+# и только один из этих запусков попадает в PUBLISH_HOURS.
 # Выбор поста детерминирован по номеру дня - state-файл не нужен,
-# поэтому гонка между прогонами и повторные публикации невозможны.
-PUBLISH_HOUR_UTC = 10
+# поэтому повторные публикации и гонка между прогонами невозможны.
+PUBLISH_HOURS = {6}   # 06:07 UTC = 09:07 MSK
 
 
 def api(method, **kw):
@@ -29,7 +30,7 @@ def main():
         print('no token')
         return
     now = time.gmtime()
-    if now.tm_hour != PUBLISH_HOUR_UTC:
+    if now.tm_hour not in PUBLISH_HOURS:
         print('not publish hour, skipping (hour=%s)' % now.tm_hour)
         return
     try:
