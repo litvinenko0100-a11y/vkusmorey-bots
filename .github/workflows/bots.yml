@@ -27,7 +27,11 @@ jobs:
           CONTENT_TOKEN: ${{ secrets.CONTENT_TOKEN }}
           EXCURSIONS_TOKEN: ${{ secrets.EXCURSIONS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 bot_content.py
+        run: |
+          if [ -z "$CONTENT_TOKEN" ]; then echo "::error::CONTENT_TOKEN is EMPTY - content will not publish"; exit 1; fi
+          echo "CONTENT_TOKEN ok"
+          python3 bot_content.py
+          echo "content step finished"
 
   bots:
     runs-on: ubuntu-latest
@@ -43,10 +47,12 @@ jobs:
           EXCURSIONS_TOKEN: ${{ secrets.EXCURSIONS_TOKEN }}
           PRODUCTS_TOKEN: ${{ secrets.PRODUCTS_TOKEN }}
         run: |
+          fail=0
           for v in EXCURSIONS_TOKEN PRODUCTS_TOKEN; do
             val="${!v}"
-            if [ -z "$val" ]; then echo "SECRET $v is EMPTY"; else echo "SECRET $v ok"; fi
+            if [ -z "$val" ]; then echo "::error::SECRET $v is EMPTY"; fail=1; else echo "SECRET $v ok"; fi
           done
+          [ "$fail" -eq 0 ] || exit 1
       - name: Run bots
         env:
           EXCURSIONS_TOKEN: ${{ secrets.EXCURSIONS_TOKEN }}
@@ -59,7 +65,9 @@ jobs:
           P2=$!
           echo "bots started: $P1 $P2"
           sleep 30
-          if ! kill -0 $P1 2>/dev/null; then echo "::error::bot_excursions died"; fi
-          if ! kill -0 $P2 2>/dev/null; then echo "::error::bot_products died"; fi
+          dead=0
+          if ! kill -0 $P1 2>/dev/null; then echo "::error::bot_excursions died"; dead=1; fi
+          if ! kill -0 $P2 2>/dev/null; then echo "::error::bot_products died"; dead=1; fi
+          [ "$dead" -eq 0 ] || exit 1
           wait $P1 $P2
           echo "both bots finished cleanly"
