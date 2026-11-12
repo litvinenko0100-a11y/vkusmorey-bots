@@ -1,7 +1,7 @@
 import os
 
 import requests, json, time
-TOK=os.environ.get('PRODUCTS_TOKEN','9194586932:AAErTv8QH7psaE7T6QvOJYXlqLGd36sq2HU')
+TOK = os.environ.get('PRODUCTS_TOKEN', '')
 API=f'https://api.telegram.org/bot{TOK}'
 ADMIN=1486595631
 PRICES=os.path.join(os.environ.get('BOT_DIR','/opt/vkusmorey'),'prices.json')

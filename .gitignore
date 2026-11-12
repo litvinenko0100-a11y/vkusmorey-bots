@@ -1,0 +1,8 @@
+.env
+vk_token.txt
+prices.local.json
+__pycache__/
+*.pyc
+bot.log
+bot.pid
+*.session

@@ -1,7 +1,7 @@
 import os
 
 import requests, json, time
-TOK=os.environ.get('EXCURSIONS_TOKEN','7795659732:AAFjnsBxLndGWUllspEp-TcFmZ6_k9hKVT4')
+TOK = os.environ.get('EXCURSIONS_TOKEN', '')
 API=f'https://api.telegram.org/bot{TOK}'
 ADMIN=1486595631
 MENU={"inline_keyboard":[

@@ -1,6 +1,6 @@
 import os, json, time, base64, requests
 
-TOK = os.environ.get('CONTENT_TOKEN') or os.environ.get('EXCURSIONS_TOKEN') or '7795659732:AAFjnsBxLndGWUllspEp-TcFmZ6_k9hKVT4'
+TOK = os.environ.get('CONTENT_TOKEN') or os.environ.get('EXCURSIONS_TOKEN', '')
 API = f'https://api.telegram.org/bot{TOK}'
 CHANNEL = '@morskieakvarium'
 BASE = os.path.dirname(os.path.abspath(__file__))
