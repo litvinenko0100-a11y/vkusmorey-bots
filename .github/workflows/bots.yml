@@ -26,7 +26,6 @@ jobs:
         env:
           CONTENT_TOKEN: ${{ secrets.CONTENT_TOKEN }}
           EXCURSIONS_TOKEN: ${{ secrets.EXCURSIONS_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ -z "$CONTENT_TOKEN" ]; then echo "::error::CONTENT_TOKEN is EMPTY - content will not publish"; exit 1; fi
           echo "CONTENT_TOKEN ok"
