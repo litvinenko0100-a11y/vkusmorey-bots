@@ -62,6 +62,14 @@ def can_post(chat):
     return ok
 
 
+def verify_deleted(state):
+    for rec in state.get('deleted', []):
+        d = requests.post(f'{API}/deleteMessage',
+                          data={'chat_id': rec.get('chat', '@murmansk_moreprodukt'),
+                                'message_id': rec['message_id']}, timeout=30).json()
+        log('delete-check', rec['message_id'], json.dumps(d, ensure_ascii=False)[:160])
+
+
 def download(url, out):
     cmd = ['yt-dlp', '-f', 'bestvideo+bestaudio/best', '--merge-output-format', 'mp4',
            '-o', out, '--no-playlist', url]
@@ -85,13 +93,18 @@ def main():
     try:
         state = gh_get(STATE_PATH)
     except Exception:
-        state = {'published': []}
+        state = {'published': [], 'skipped': [], 'deleted': []}
+    state.setdefault('published', [])
+    state.setdefault('skipped', [])
+    state.setdefault('deleted', [])
+
+    verify_deleted(state)
+
     pending = [q for q in queue if q['permalink'] not in state['published']]
     log('pending', len(pending))
     if not pending:
         log('no pending reels'); save_report(); return
 
-    # слот не теряем: берём первый рилс, в который бот реально может писать
     item = None
     for cand in pending:
         if can_post(cand['chat']):
@@ -109,14 +122,13 @@ def main():
     if DRY:
         log('DRY RUN - not sending'); save_report(); return
 
-    # без подписи
     with open(path, 'rb') as f:
         r = requests.post(f'{API}/sendVideo',
                           data={'chat_id': item['chat'], 'supports_streaming': 'true'},
                           files={'video': ('reel.mp4', f, 'video/mp4')}, timeout=900).json()
-    log('sendVideo', json.dumps(r, ensure_ascii=False)[:300])
+    log('sendVideo ok=', r.get('ok'))
     if not r.get('ok'):
-        log('sendVideo failed'); save_report(); return
+        log('sendVideo failed:', json.dumps(r, ensure_ascii=False)[:250]); save_report(); return
     msg = r['result']
     log('published to', item['chat'], 'message_id', msg.get('message_id'))
     state['published'].append(item['permalink'])
