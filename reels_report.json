@@ -1,10 +1,11 @@
 {
  "log": [
-  "pending 12",
-  "next reel: https://www.instagram.com/reel/Df2tXDuIh4X/ -> @vkusmorey51",
-  "yt-dlp rc 0 load] 100.0% of   96.45KiB at    2.74MiB/s ETA 00:00\n[download] 100% of   96.45KiB in 00:00:00 at 720.97KiB/s \n[Merger] Merging formats into \"reel.mp4\"\nDeleting original file reel.fdash-1728281075538767v.mp4 (pass -k to keep)\nDeleting original file reel.fdash-1728280935538781a.m4a (pass -k to keep)\n ",
-  "downloaded reel.mp4 2961811 bytes",
-  "sendVideo response {\"ok\": false, \"error_code\": 403, \"description\": \"Forbidden: bot is not a member of the channel chat\"}",
-  "sendVideo failed"
+  "pending 12 published 0 skipped 0",
+  "trying https://www.instagram.com/reel/DfutcjmRsVt/ -> @murmansk_moreprodukt",
+  "yt-dlp rc 0",
+  "downloaded reel.mp4 4830886 bytes",
+  "sendVideo {\"ok\": true, \"result\": {\"message_id\": 62, \"from\": {\"id\": 9194586932, \"is_bot\": true, \"first_name\": \"BОТ ТАК.ВОТ ~ Padik91kanal Dimoqu input39 pantera6704 stowsen\", \"username\": \"Kkrraabb51_bot\"}, \"author_signature\": \"BОТ ТАК.ВОТ ~ Padik91kanal Dimoqu input39 pantera6704 stowsen\", \"chat\": {\"id\": -1004",
+  "PUBLISHED to @murmansk_moreprodukt message_id 62",
+  "gh_put ok reels_state.json"
  ]
 }
