@@ -1,0 +1,33 @@
+name: Reels to Telegram
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 08:30 UTC = 11:30 MSK, jeden reel dziennie
+    - cron: '30 8 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reels-to-telegram
+  cancel-in-progress: false
+
+jobs:
+  reels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt yt-dlp
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Publish one reel
+        env:
+          PRODUCTS_TOKEN: ${{ secrets.PRODUCTS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ vars.DRY_RUN }}
+        run: python3 post_reel.py
