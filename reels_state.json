@@ -1,6 +1,5 @@
 {
  "published": [
-  "https://www.instagram.com/reel/DfutcjmRsVt/",
   "https://www.instagram.com/reel/Dft8_zaxaeh/"
  ],
  "skipped": [],
@@ -9,5 +8,12 @@
   "chat": "@murmansk_moreprodukt",
   "date": "2026-11-14",
   "message_id": 63
- }
+ },
+ "deleted": [
+  {
+   "message_id": 62,
+   "permalink": "https://www.instagram.com/reel/DfutcjmRsVt/",
+   "reason": "published with old caption before captionless mode"
+  }
+ ]
 }
