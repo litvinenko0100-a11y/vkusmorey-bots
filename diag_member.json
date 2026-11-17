@@ -1,0 +1,26 @@
+{
+ "@murmansk_moreprodukt": {
+  "ok": true,
+  "status": "administrator",
+  "can_post_messages": true,
+  "error": null
+ },
+ "@vkusmorey51": {
+  "ok": false,
+  "status": null,
+  "can_post_messages": null,
+  "error": "Bad Request: member list is inaccessible"
+ },
+ "@morskieakvarium": {
+  "ok": false,
+  "status": null,
+  "can_post_messages": null,
+  "error": "Bad Request: member list is inaccessible"
+ },
+ "-1003715433172": {
+  "ok": false,
+  "status": null,
+  "can_post_messages": null,
+  "error": "Forbidden: bot is not a member of the supergroup chat"
+ }
+}
