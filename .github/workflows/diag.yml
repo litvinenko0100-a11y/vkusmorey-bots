@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   diag:
@@ -21,4 +21,5 @@ jobs:
           CONTENT_TOKEN: ${{ secrets.CONTENT_TOKEN }}
           EXCURSIONS_TOKEN: ${{ secrets.EXCURSIONS_TOKEN }}
           PRODUCTS_TOKEN: ${{ secrets.PRODUCTS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 diag_tokens.py
