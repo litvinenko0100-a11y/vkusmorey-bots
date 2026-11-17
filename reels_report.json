@@ -1,12 +1,13 @@
 {
  "log": [
+  "delete-check 62 {\"ok\": false, \"error_code\": 400, \"description\": \"Bad Request: message to delete not found\"}",
   "pending 11",
   "chat @murmansk_moreprodukt status administrator can_post True",
-  "publishing https://www.instagram.com/reel/Dft8_zaxaeh/ -> @murmansk_moreprodukt",
+  "publishing https://www.instagram.com/reel/DfutcjmRsVt/ -> @murmansk_moreprodukt",
   "yt-dlp rc 0",
-  "downloaded reel.mp4 4350146 bytes",
-  "sendVideo {\"ok\": true, \"result\": {\"message_id\": 63, \"from\": {\"id\": 9194586932, \"is_bot\": true, \"first_name\": \"BОТ ТАК.ВОТ ~ Padik91kanal Dimoqu input39 pantera6704 stowsen\", \"username\": \"Kkrraabb51_bot\"}, \"author_signature\": \"BОТ ТАК.ВОТ ~ Padik91kanal Dimoqu input39 pantera6704 stowsen\", \"chat\": {\"id\": -1004",
-  "published to @murmansk_moreprodukt message_id 63",
+  "downloaded reel.mp4 4830886 bytes",
+  "sendVideo ok= True",
+  "published to @murmansk_moreprodukt message_id 64",
   "gh_put ok reels_state.json"
  ]
 }
