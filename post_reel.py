@@ -1,9 +1,9 @@
-import os, json, base64, subprocess, sys, time, requests
+import os, json, base64, subprocess, time, requests
 
 REPO = 'litvinenko0100-a11y/vkusmorey-bots'
 BRANCH = 'main'
 GH = os.environ.get('GITHUB_TOKEN', '')
-TOK = os.environ.get('PRODUCTS_TOKEN') or os.environ.get('EXCURSIONS_TOKEN', '')
+TOK = os.environ.get('PRODUCTS_TOKEN', '')
 API = f'https://api.telegram.org/bot{TOK}'
 STATE_PATH = 'reels_state.json'
 QUEUE_PATH = 'reels.json'
@@ -30,7 +30,6 @@ def gh_put(path, data, msg):
     payload = {'message': msg, 'content': body, 'branch': BRANCH}
     r = requests.put(f'https://api.github.com/repos/{REPO}/contents/{path}', headers=headers, json=payload, timeout=60)
     if r.status_code not in (200, 201):
-        # update existing file needs sha
         try:
             cur = requests.get(f'https://api.github.com/repos/{REPO}/contents/{path}', headers=headers, timeout=30).json()
             payload['sha'] = cur['sha']
@@ -38,7 +37,7 @@ def gh_put(path, data, msg):
         except Exception as e:
             log('sha retry failed', e)
     if r.status_code not in (200, 201):
-        log('gh_put failed', r.status_code, r.text[:300])
+        log('gh_put failed', r.status_code, r.text[:200])
         return False
     log('gh_put ok', path)
     return True
@@ -55,14 +54,23 @@ def download(url, out):
     cmd = ['yt-dlp', '-f', 'bestvideo+bestaudio/best', '--merge-output-format', 'mp4',
            '-o', out, '--no-playlist', url]
     r = subprocess.run(cmd, capture_output=True, text=True, timeout=900)
-    log('yt-dlp rc', r.returncode, (r.stdout or '')[-300:], (r.stderr or '')[-500:])
+    log('yt-dlp rc', r.returncode)
     if r.returncode != 0:
+        log((r.stderr or '')[-400:])
         return None
     base = out.rsplit('.', 1)[0]
     for ext in ('.mp4', '.mkv', '.webm'):
         if os.path.exists(base + ext):
             return base + ext
     return None
+
+
+def try_send(item, path):
+    with open(path, 'rb') as f:
+        return requests.post(f'{API}/sendVideo',
+                             data={'chat_id': item['chat'], 'caption': item['caption'],
+                                   'supports_streaming': 'true'},
+                             files={'video': ('reel.mp4', f, 'video/mp4')}, timeout=900).json()
 
 
 def main():
@@ -73,33 +81,50 @@ def main():
     try:
         state = gh_get(STATE_PATH)
     except Exception:
-        state = {'published': []}
-    pending = [q for q in queue if q['permalink'] not in state['published']]
-    log('pending', len(pending))
+        state = {'published': [], 'skipped': []}
+    state.setdefault('published', [])
+    state.setdefault('skipped', [])
+
+    pending = [q for q in queue
+               if q['permalink'] not in state['published'] and q['permalink'] not in state['skipped']]
+    log('pending', len(pending), 'published', len(state['published']), 'skipped', len(state['skipped']))
     if not pending:
-        log('no pending reels'); save_report(); return
-    item = pending[0]
-    log('next reel:', item['permalink'], '->', item['chat'])
-    path = download(item['permalink'], 'reel.mp4')
-    if not path:
-        log('download failed, nothing published'); save_report(); return
-    log('downloaded', path, os.path.getsize(path), 'bytes')
-    if DRY:
-        log('DRY RUN - not sending. caption:', item['caption']); save_report(); return
-    with open(path, 'rb') as f:
-        r = requests.post(f'{API}/sendVideo',
-                          data={'chat_id': item['chat'], 'caption': item['caption'],
-                                'supports_streaming': 'true'},
-                          files={'video': ('reel.mp4', f, 'video/mp4')}, timeout=900).json()
-    log('sendVideo response', json.dumps(r, ensure_ascii=False)[:400])
-    if not r.get('ok'):
-        log('sendVideo failed'); save_report(); return
-    msg = r['result']
-    log('published to', item['chat'], 'message_id', msg.get('message_id'))
-    state['published'].append(item['permalink'])
-    state['last'] = {'permalink': item['permalink'], 'chat': item['chat'],
-                     'date': item['date'], 'message_id': msg.get('message_id')}
-    gh_put(STATE_PATH, state, f'reels: published {item["date"]} -> {item["chat"]}')
+        log('nothing to publish'); save_report(); return
+
+    for item in pending:
+        log('trying', item['permalink'], '->', item['chat'])
+        path = download(item['permalink'], 'reel.mp4')
+        if not path:
+            log('download failed, skip this reel')
+            state['skipped'].append(item['permalink'])
+            gh_put(STATE_PATH, state, 'reels: skipped (download)')
+            continue
+        log('downloaded', path, os.path.getsize(path), 'bytes')
+        if DRY:
+            log('DRY RUN - not sending. caption:', item['caption'])
+            save_report()
+            return
+        r = try_send(item, path)
+        log('sendVideo', json.dumps(r, ensure_ascii=False)[:300])
+        if not r.get('ok'):
+            desc = r.get('description', '')
+            log('send failed:', desc)
+            if 'member' in desc.lower() or 'forbidden' in desc.lower() or 'not a member' in desc.lower():
+                state['skipped'].append(item['permalink'])
+                gh_put(STATE_PATH, state, f'reels: skipped {item["chat"]} (no access)')
+                log('skipped (no access), trying next')
+                continue
+            log('hard failure, stop')
+            save_report()
+            return
+        msg = r['result']
+        log('PUBLISHED to', item['chat'], 'message_id', msg.get('message_id'))
+        state['published'].append(item['permalink'])
+        state['last'] = {'permalink': item['permalink'], 'chat': item['chat'],
+                         'date': item['date'], 'message_id': msg.get('message_id')}
+        gh_put(STATE_PATH, state, f'reels: published {item["date"]} -> {item["chat"]}')
+        save_report()
+        return
     save_report()
 
 
