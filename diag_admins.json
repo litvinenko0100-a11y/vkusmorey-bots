@@ -1,0 +1,82 @@
+{
+ "me": {
+  "id": 9194586932,
+  "is_bot": true,
+  "first_name": "BОТ ТАК.ВОТ ~ Padik91kanal Dimoqu input39 pantera6704 stowsen",
+  "username": "Kkrraabb51_bot",
+  "can_join_groups": true,
+  "can_read_all_group_messages": false,
+  "supports_inline_queries": false,
+  "supports_guest_queries": false,
+  "can_connect_to_business": false,
+  "has_main_web_app": false,
+  "has_topics_enabled": false,
+  "allows_users_to_create_topics": false,
+  "can_manage_bots": false,
+  "supports_join_request_queries": false
+ },
+ "chats": {
+  "@murmansk_moreprodukt": {
+   "ok": true,
+   "title": "Морепродукты Мурманска",
+   "type": "channel",
+   "admins_error": null,
+   "admins": [
+    {
+     "username": "Kkrraabb51_bot",
+     "id": 9194586932,
+     "status": "administrator",
+     "can_post_messages": true,
+     "can_post_stories": true,
+     "can_edit_messages": true
+    },
+    {
+     "username": null,
+     "id": 7795659732,
+     "status": "administrator",
+     "can_post_messages": true,
+     "can_post_stories": true,
+     "can_edit_messages": true
+    },
+    {
+     "username": "Kosha_Markova",
+     "id": 266974556,
+     "status": "administrator",
+     "can_post_messages": true,
+     "can_post_stories": true,
+     "can_edit_messages": true
+    },
+    {
+     "username": null,
+     "id": 429028865,
+     "status": "administrator",
+     "can_post_messages": true,
+     "can_post_stories": true,
+     "can_edit_messages": true
+    },
+    {
+     "username": "Vkus_morey51",
+     "id": 1486595631,
+     "status": "creator",
+     "can_post_messages": null,
+     "can_post_stories": null,
+     "can_edit_messages": null
+    }
+   ]
+  },
+  "@vkusmorey51": {
+   "ok": true,
+   "title": "Вкус Морей | Морские прогулки в Териберке",
+   "type": "channel",
+   "admins_error": "Bad Request: member list is inaccessible",
+   "admins": []
+  },
+  "@morskieakvarium": {
+   "ok": true,
+   "title": "Морские аквариумы и УЗВ | консультации | Москва",
+   "type": "channel",
+   "admins_error": "Bad Request: member list is inaccessible",
+   "admins": []
+  }
+ }
+}
