@@ -15,7 +15,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: pip install -q -U yt-dlp faster-whisper
+      - name: Install deps
+        run: |
+          pip install -q -U yt-dlp
+          pip install -q "huggingface_hub<1.0"
+          pip install -q faster-whisper
+          pip install -q requests
       - name: Install ffmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Classify
