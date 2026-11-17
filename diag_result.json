@@ -1,0 +1,101 @@
+[
+ {
+  "token": "CONTENT_TOKEN",
+  "present": true,
+  "getMe_ok": false,
+  "username": null,
+  "error": "Unauthorized",
+  "chats": {
+   "@murmansk_moreprodukt": {
+    "ok": false,
+    "title": null,
+    "type": null,
+    "error": "Unauthorized"
+   },
+   "@vkusmorey51": {
+    "ok": false,
+    "title": null,
+    "type": null,
+    "error": "Unauthorized"
+   },
+   "-1003715433172": {
+    "ok": false,
+    "title": null,
+    "type": null,
+    "error": "Unauthorized"
+   },
+   "@morskieakvarium": {
+    "ok": false,
+    "title": null,
+    "type": null,
+    "error": "Unauthorized"
+   }
+  }
+ },
+ {
+  "token": "EXCURSIONS_TOKEN",
+  "present": true,
+  "getMe_ok": false,
+  "username": null,
+  "error": "Unauthorized",
+  "chats": {
+   "@murmansk_moreprodukt": {
+    "ok": false,
+    "title": null,
+    "type": null,
+    "error": "Unauthorized"
+   },
+   "@vkusmorey51": {
+    "ok": false,
+    "title": null,
+    "type": null,
+    "error": "Unauthorized"
+   },
+   "-1003715433172": {
+    "ok": false,
+    "title": null,
+    "type": null,
+    "error": "Unauthorized"
+   },
+   "@morskieakvarium": {
+    "ok": false,
+    "title": null,
+    "type": null,
+    "error": "Unauthorized"
+   }
+  }
+ },
+ {
+  "token": "PRODUCTS_TOKEN",
+  "present": true,
+  "getMe_ok": true,
+  "username": "Kkrraabb51_bot",
+  "error": null,
+  "chats": {
+   "@murmansk_moreprodukt": {
+    "ok": true,
+    "title": "Морепродукты Мурманска",
+    "type": "channel",
+    "error": null
+   },
+   "@vkusmorey51": {
+    "ok": true,
+    "title": "Вкус Морей | Морские прогулки в Териберке",
+    "type": "channel",
+    "error": null
+   },
+   "-1003715433172": {
+    "ok": false,
+    "title": null,
+    "type": null,
+    "error": "Forbidden: bot is not a member of the supergroup chat"
+   },
+   "@morskieakvarium": {
+    "ok": true,
+    "title": "Морские аквариумы и УЗВ | консультации | Москва",
+    "type": "channel",
+    "error": null
+   }
+  }
+ }
+]
