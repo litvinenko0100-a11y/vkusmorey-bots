@@ -52,14 +52,15 @@ def main():
         return
     item = pending[0]
     print('next reel:', item['permalink'], '->', item['chat'])
-    if DRY:
-        print('DRY RUN caption:', item['caption'])
-        return
     path = download(item['permalink'], 'reel.mp4')
     if not path:
         print('download failed, nothing published')
         return
-    print('downloaded', path, os.path.getsize(path))
+    size = os.path.getsize(path)
+    print('downloaded', path, size, 'bytes')
+    if DRY:
+        print('DRY RUN - not sending. caption:', item['caption'])
+        return
     with open(path, 'rb') as f:
         r = requests.post(f'{API}/sendVideo',
                           data={'chat_id': item['chat'], 'caption': item['caption'],
