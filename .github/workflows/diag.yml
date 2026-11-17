@@ -1,0 +1,24 @@
+name: Diag tokens
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Diagnose
+        env:
+          CONTENT_TOKEN: ${{ secrets.CONTENT_TOKEN }}
+          EXCURSIONS_TOKEN: ${{ secrets.EXCURSIONS_TOKEN }}
+          PRODUCTS_TOKEN: ${{ secrets.PRODUCTS_TOKEN }}
+        run: python3 diag_tokens.py
