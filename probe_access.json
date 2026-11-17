@@ -1,0 +1,62 @@
+{
+ "tests": {
+  "@vkusmorey51": {
+   "admins_ok": false,
+   "error": "Bad Request: member list is inaccessible",
+   "admins": []
+  },
+  "@morskieakvarium": {
+   "admins_ok": false,
+   "error": "Bad Request: member list is inaccessible",
+   "admins": []
+  },
+  "@murmansk_moreprodukt": {
+   "admins_ok": true,
+   "error": null,
+   "admins": [
+    {
+     "id": 9194586932,
+     "username": "Kkrraabb51_bot",
+     "status": "administrator",
+     "can_post_messages": true
+    },
+    {
+     "id": 7795659732,
+     "username": null,
+     "status": "administrator",
+     "can_post_messages": true
+    },
+    {
+     "id": 266974556,
+     "username": "Kosha_Markova",
+     "status": "administrator",
+     "can_post_messages": true
+    },
+    {
+     "id": 429028865,
+     "username": null,
+     "status": "administrator",
+     "can_post_messages": true
+    },
+    {
+     "id": 1486595631,
+     "username": "Vkus_morey51",
+     "status": "creator",
+     "can_post_messages": null
+    }
+   ]
+  },
+  "admin_dm": {
+   "ok": false,
+   "error": "Forbidden: bot can't initiate conversation with a user"
+  },
+  "send_probe_vkusmorey51": {
+   "ok": false,
+   "error": "Forbidden: bot is not a member of the channel chat"
+  },
+  "send_probe_morskieakvarium": {
+   "ok": false,
+   "error": "Forbidden: bot is not a member of the channel chat"
+  }
+ }
+}
