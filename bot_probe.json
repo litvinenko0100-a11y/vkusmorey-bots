@@ -1,0 +1,107 @@
+{
+ "CONTENT_TOKEN": {
+  "token_present": true,
+  "getMe": {
+   "ok": false,
+   "username": null,
+   "id": null,
+   "error": "Unauthorized"
+  },
+  "channels": {
+   "@morskieakvarium": {
+    "ok": false,
+    "status": null,
+    "can_post_messages": null,
+    "error": "Unauthorized"
+   },
+   "@vkusmorey51": {
+    "ok": false,
+    "status": null,
+    "can_post_messages": null,
+    "error": "Unauthorized"
+   },
+   "@murmansk_moreprodukt": {
+    "ok": false,
+    "status": null,
+    "can_post_messages": null,
+    "error": "Unauthorized"
+   }
+  },
+  "getUpdates": {
+   "ok": false,
+   "error": "Unauthorized",
+   "count": 0,
+   "messages": []
+  }
+ },
+ "EXCURSIONS_TOKEN": {
+  "token_present": true,
+  "getMe": {
+   "ok": false,
+   "username": null,
+   "id": null,
+   "error": "Unauthorized"
+  },
+  "channels": {
+   "@morskieakvarium": {
+    "ok": false,
+    "status": null,
+    "can_post_messages": null,
+    "error": "Unauthorized"
+   },
+   "@vkusmorey51": {
+    "ok": false,
+    "status": null,
+    "can_post_messages": null,
+    "error": "Unauthorized"
+   },
+   "@murmansk_moreprodukt": {
+    "ok": false,
+    "status": null,
+    "can_post_messages": null,
+    "error": "Unauthorized"
+   }
+  },
+  "getUpdates": {
+   "ok": false,
+   "error": "Unauthorized",
+   "count": 0,
+   "messages": []
+  }
+ },
+ "PRODUCTS_TOKEN": {
+  "token_present": true,
+  "getMe": {
+   "ok": true,
+   "username": "Kkrraabb51_bot",
+   "id": 9194586932,
+   "error": null
+  },
+  "channels": {
+   "@morskieakvarium": {
+    "ok": false,
+    "status": null,
+    "can_post_messages": null,
+    "error": "Bad Request: member list is inaccessible"
+   },
+   "@vkusmorey51": {
+    "ok": false,
+    "status": null,
+    "can_post_messages": null,
+    "error": "Bad Request: member list is inaccessible"
+   },
+   "@murmansk_moreprodukt": {
+    "ok": true,
+    "status": "administrator",
+    "can_post_messages": true,
+    "error": null
+   }
+  },
+  "getUpdates": {
+   "ok": true,
+   "error": null,
+   "count": 0,
+   "messages": []
+  }
+ }
+}
