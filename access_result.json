@@ -1,0 +1,805 @@
+{
+ "token_present": true,
+ "exc_token_present": true,
+ "chats": {
+  "@murmansk_moreprodukt": {
+   "me": {
+    "ok": true,
+    "result": {
+     "user": {
+      "id": 9194586932,
+      "is_bot": true,
+      "first_name": "BОТ ТАК.ВОТ ~ Padik91kanal Dimoqu input39 pantera6704 stowsen",
+      "username": "Kkrraabb51_bot"
+     },
+     "status": "administrator",
+     "can_be_edited": false,
+     "can_manage_chat": true,
+     "can_change_info": true,
+     "can_post_messages": true,
+     "can_edit_messages": true,
+     "can_delete_messages": true,
+     "can_invite_users": true,
+     "can_restrict_members": true,
+     "can_promote_members": false,
+     "can_manage_video_chats": true,
+     "can_post_stories": true,
+     "can_edit_stories": true,
+     "can_delete_stories": true,
+     "can_manage_direct_messages": true,
+     "can_send_welcome_messages": true,
+     "is_anonymous": false,
+     "can_manage_voice_chats": true
+    }
+   },
+   "chat": {
+    "ok": true,
+    "result": {
+     "id": -1004483044537,
+     "title": "Морепродукты Мурманска",
+     "username": "murmansk_moreprodukt",
+     "type": "channel",
+     "active_usernames": [
+      "murmansk_moreprodukt"
+     ],
+     "description": "🦀 Морепродукты Мурманска — свежие морепродукты\n\nДобро пожаловать в сообщество любителей настоящих северных деликатесов!\n\nМы работаем с тем, что выловили или собрали сами — без перекупов и долгой дороги.\n\nВ ассортименте:\n• краб — живой и варёный\n• гребешок",
+     "invite_link": "https://t.me/+P6Q0kMwxNmphMmYy",
+     "can_send_gift": true,
+     "has_visible_history": true,
+     "can_send_paid_media": true,
+     "accepted_gift_types": {
+      "unlimited_gifts": true,
+      "limited_gifts": true,
+      "unique_gifts": true,
+      "premium_subscription": true,
+      "gifts_from_channels": true
+     },
+     "photo": {
+      "small_file_id": "AQADAgADRiRrG44eIUoACAIAA0cbJSAW____ParS_Mhb1xs9BA",
+      "small_file_unique_id": "AQADRiRrG44eIUoAAQ",
+      "big_file_id": "AQADAgADRiRrG44eIUoACAMAA0cbJSAW____ParS_Mhb1xs9BA",
+      "big_file_unique_id": "AQADRiRrG44eIUoB"
+     },
+     "pinned_message": {
+      "message_id": 59,
+      "from": {
+       "id": 7795659732,
+       "is_bot": false,
+       "first_name": ""
+      },
+      "author_signature": "ВОТ Т4К.ВОТ ~ sov633 sestra600 sister52 sasalols dik881",
+      "chat": {
+       "id": -1004483044537,
+       "title": "Морепродукты Мурманска",
+       "username": "murmansk_moreprodukt",
+       "type": "channel"
+      },
+      "date": 1794427634,
+      "text": "Для ресторанов и отелей: t.me/morskieakvarium\n\nКонсультация по инженерной части морской витрины: схема, спецификация, живая живность, поставщики, ТЗ и чек-лист приёмки. Работаем по всему миру через Telegram, без выездов и монтажа.\nЗаявки: @vkusmorey_bot",
+      "entities": [
+       {
+        "offset": 25,
+        "length": 20,
+        "type": "url"
+       },
+       {
+        "offset": 239,
+        "length": 14,
+        "type": "mention"
+       }
+      ],
+      "link_preview_options": {
+       "is_disabled": true
+      }
+     },
+     "available_reactions": [
+      {
+       "type": "emoji",
+       "emoji": "❤"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👍"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🔥"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🥰"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👏"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😁"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤔"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🎉"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤩"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🙏"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👌"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🕊"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🥱"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🥴"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😍"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🐳"
+      },
+      {
+       "type": "emoji",
+       "emoji": "❤‍🔥"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🌚"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🌭"
+      },
+      {
+       "type": "emoji",
+       "emoji": "💯"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤣"
+      },
+      {
+       "type": "emoji",
+       "emoji": "⚡"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🍌"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🏆"
+      },
+      {
+       "type": "emoji",
+       "emoji": "💔"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤨"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😐"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🍓"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🍾"
+      },
+      {
+       "type": "emoji",
+       "emoji": "💋"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🖕"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😈"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😴"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😭"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤓"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👻"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👨‍💻"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👀"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🎃"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🙈"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😇"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😨"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤝"
+      },
+      {
+       "type": "emoji",
+       "emoji": "✍"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤗"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🫡"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🎅"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🎄"
+      },
+      {
+       "type": "emoji",
+       "emoji": "☃"
+      },
+      {
+       "type": "emoji",
+       "emoji": "💅"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤪"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🗿"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🆒"
+      },
+      {
+       "type": "emoji",
+       "emoji": "💘"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🙉"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🦄"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😘"
+      },
+      {
+       "type": "emoji",
+       "emoji": "💊"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🙊"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😎"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👾"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤷‍♂"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤷"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤷‍♀"
+      }
+     ],
+     "max_reaction_count": 11,
+     "accent_color_id": 6
+    }
+   }
+  },
+  "@vkusmorey51": {
+   "me": {
+    "ok": false,
+    "error_code": 400,
+    "description": "Bad Request: member list is inaccessible"
+   },
+   "chat": {
+    "ok": true,
+    "result": {
+     "id": -1002075126363,
+     "title": "Вкус Морей | Морские прогулки в Териберке",
+     "username": "vkusmorey51",
+     "type": "channel",
+     "active_usernames": [
+      "vkusmorey51"
+     ],
+     "description": "🌊 Вкус Морей — морские прогулки в Териберке\n\nБаренцево море, Мурманская область. Прогулки на катере к базальтовым скалам, рыбалка, крабовое сафари и северное сияние.\n\nВ программе:\n• прогулка по Баренцевому морю\n• крабовое сафари — выход в море за крабом\n•",
+     "can_send_gift": true,
+     "has_visible_history": true,
+     "linked_chat_id": -1003715433172,
+     "can_send_paid_media": true,
+     "accepted_gift_types": {
+      "unlimited_gifts": true,
+      "limited_gifts": true,
+      "unique_gifts": true,
+      "premium_subscription": true,
+      "gifts_from_channels": true
+     },
+     "photo": {
+      "small_file_id": "AQADAgAD4c4xGyOtYUsACAIAA6UFq68W____Wdc-JKsaZeM9BA",
+      "small_file_unique_id": "AQAD4c4xGyOtYUsAAQ",
+      "big_file_id": "AQADAgAD4c4xGyOtYUsACAMAA6UFq68W____Wdc-JKsaZeM9BA",
+      "big_file_unique_id": "AQAD4c4xGyOtYUsB"
+     },
+     "pinned_message": {
+      "message_id": 193,
+      "from": {
+       "id": 7795659732,
+       "is_bot": false,
+       "first_name": ""
+      },
+      "author_signature": "ВОТ Т4К.ВОТ ~ sov633 sestra600 sister52 sasalols dik881",
+      "chat": {
+       "id": -1002075126363,
+       "title": "Вкус Морей | Морские прогулки в Териберке",
+       "username": "vkusmorey51",
+       "type": "channel"
+      },
+      "date": 1794427633,
+      "edit_date": 1794427636,
+      "text": "Отдельно от прогулок — канал про морские аквариумы и УЗВ для ресторанов: t.me/morskieakvarium\n\nКонсультация по инженерной части: схема, спецификация, живая живность, поставщики, ТЗ для подрядчика и чек-лист приёмки. Без выездов и монтажа. Если у вас или у знакомых ресторан с живой витриной — там разборы по теме.\nЗаявки: @vkusmorey_bot",
+      "entities": [
+       {
+        "offset": 73,
+        "length": 20,
+        "type": "url"
+       },
+       {
+        "offset": 322,
+        "length": 14,
+        "type": "mention"
+       }
+      ],
+      "link_preview_options": {
+       "is_disabled": true
+      },
+      "has_protected_content": true
+     },
+     "available_reactions": [
+      {
+       "type": "paid"
+      },
+      {
+       "type": "emoji",
+       "emoji": "❤"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👍"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👎"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🔥"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🥰"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👏"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😁"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤔"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤯"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😱"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤬"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😢"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🎉"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤩"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤮"
+      },
+      {
+       "type": "emoji",
+       "emoji": "💩"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🙏"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👌"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🕊"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤡"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🥱"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🥴"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😍"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🐳"
+      },
+      {
+       "type": "emoji",
+       "emoji": "❤‍🔥"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🌚"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🌭"
+      },
+      {
+       "type": "emoji",
+       "emoji": "💯"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤣"
+      },
+      {
+       "type": "emoji",
+       "emoji": "⚡"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🍌"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🏆"
+      },
+      {
+       "type": "emoji",
+       "emoji": "💔"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤨"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😐"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🍓"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🍾"
+      },
+      {
+       "type": "emoji",
+       "emoji": "💋"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🖕"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😈"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😴"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😭"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤓"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👻"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👨‍💻"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👀"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🎃"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🙈"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😇"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😨"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤝"
+      },
+      {
+       "type": "emoji",
+       "emoji": "✍"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤗"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🫡"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🎅"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🎄"
+      },
+      {
+       "type": "emoji",
+       "emoji": "☃"
+      },
+      {
+       "type": "emoji",
+       "emoji": "💅"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤪"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🗿"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🆒"
+      },
+      {
+       "type": "emoji",
+       "emoji": "💘"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🙉"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🦄"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😘"
+      },
+      {
+       "type": "emoji",
+       "emoji": "💊"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🙊"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😎"
+      },
+      {
+       "type": "emoji",
+       "emoji": "👾"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤷‍♂"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤷"
+      },
+      {
+       "type": "emoji",
+       "emoji": "🤷‍♀"
+      },
+      {
+       "type": "emoji",
+       "emoji": "😡"
+      }
+     ],
+     "max_reaction_count": 11,
+     "accent_color_id": 2,
+     "has_protected_content": true
+    }
+   }
+  },
+  "@morskieakvarium": {
+   "me": {
+    "ok": false,
+    "error_code": 400,
+    "description": "Bad Request: member list is inaccessible"
+   },
+   "chat": {
+    "ok": true,
+    "result": {
+     "id": -1004436449563,
+     "title": "Морские аквариумы и УЗВ | консультации | Москва",
+     "username": "morskieakvarium",
+     "type": "channel",
+     "active_usernames": [
+      "morskieakvarium"
+     ],
+     "description": "Морские аквариумы и УЗВ — консультации, проектирование и подбор поставщиков. Мы не выезжаем и не монтируем: даём схему, спецификацию, ТЗ для подрядчика и рекомендации, где купить оборудование и живую морскую живность. Работаем удалённо из Москвы по всему",
+     "can_send_gift": true,
+     "has_visible_history": true,
+     "can_send_paid_media": true,
+     "accepted_gift_types": {
+      "unlimited_gifts": true,
+      "limited_gifts": true,
+      "unique_gifts": true,
+      "premium_subscription": true,
+      "gifts_from_channels": true
+     },
+     "photo": {
+      "small_file_id": "AQADAgADAR5rG6UJmUsACAIAA-UW7CIW____XCWbJrWZfrI9BA",
+      "small_file_unique_id": "AQADAR5rG6UJmUsAAQ",
+      "big_file_id": "AQADAgADAR5rG6UJmUsACAMAA-UW7CIW____XCWbJrWZfrI9BA",
+      "big_file_unique_id": "AQADAR5rG6UJmUsB"
+     },
+     "pinned_message": {
+      "message_id": 101,
+      "sender_chat": {
+       "id": -1004436449563,
+       "title": "Морские аквариумы и УЗВ | консультации | Москва",
+       "username": "morskieakvarium",
+       "type": "channel"
+      },
+      "chat": {
+       "id": -1004436449563,
+       "title": "Морские аквариумы и УЗВ | консультации | Москва",
+       "username": "morskieakvarium",
+       "type": "channel"
+      },
+      "date": 1794427678,
+      "text": "Подписывайтесь — здесь разбираем инженерную часть морских аквариумов и УЗВ для ресторанов и отелей: как спроектировать витрину, как написать ТЗ подрядчику, по чек-листу принять работу и почему аквариум теряет товарный вид через месяц.\n\nБез рекламы подрядчиков и без «приедем и смонтируем». Только схема, спецификация, живность, поставщики, ТЗ и приёмка.\n\nВопросы и заявки: @vkusmorey_bot",
+      "entities": [
+       {
+        "offset": 373,
+        "length": 14,
+        "type": "mention"
+       }
+      ]
+     },
+     "available_reactions": [],
+     "max_reaction_count": 11,
+     "accent_color_id": 0
+    }
+   }
+  }
+ },
+ "products_updates": {
+  "ok": true,
+  "count": 0,
+  "error": null,
+  "messages": []
+ },
+ "excursions_updates": {
+  "ok": false,
+  "count": 0,
+  "error": "Unauthorized",
+  "messages": []
+ }
+}
