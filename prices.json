@@ -13,6 +13,7 @@
  ],
  "fish": null,
  "squid": null,
- "crab": null,
- "salmon": null
+ "crab": 890000,
+ "salmon": null,
+ "crab_label": "Краб камчатский, 1 фал"
 }
