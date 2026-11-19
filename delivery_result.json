@@ -1,0 +1,18 @@
+{
+ "sent": [],
+ "pending_total": 8,
+ "log": [
+  "prices before: {\"fish\": null, \"squid\": null, \"crab\": 890000, \"salmon\": null}",
+  "gh_put prices.json 200",
+  "prices after: {\"fish\": null, \"squid\": null, \"crab\": 890000, \"salmon\": null}",
+  "pending 8",
+  "sendVideo https://www.instagram.com/reel/Df2tXDuIh4X/ False None Forbidden: bot can't initiate conversation with a user",
+  "sendVideo https://www.instagram.com/reel/Df2ssCyIpqd/ False None Forbidden: bot can't initiate conversation with a user",
+  "sendVideo https://www.instagram.com/reel/Df2sOQYoYHW/ False None Forbidden: bot can't initiate conversation with a user",
+  "sendVideo https://www.instagram.com/reel/Df0Dnj0RQcZ/ False None Forbidden: bot can't initiate conversation with a user",
+  "sendVideo https://www.instagram.com/reel/Dfxvor8xYXi/ False None Forbidden: bot can't initiate conversation with a user",
+  "sendVideo https://www.instagram.com/reel/DfxcubsRhHZ/ False None Forbidden: bot can't initiate conversation with a user",
+  "sendVideo https://www.instagram.com/reel/DfvDT0oxpQ7/ False None Forbidden: bot can't initiate conversation with a user",
+  "sendVideo https://www.instagram.com/reel/Dfp81qoRN3F/ False None Forbidden: bot can't initiate conversation with a user"
+ ]
+}
