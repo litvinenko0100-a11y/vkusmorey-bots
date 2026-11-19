@@ -1,0 +1,41 @@
+{
+ "@vkusmorey51": {
+  "sendChatAction": {
+   "ok": false,
+   "desc": "Forbidden: bot is not a member of the channel chat"
+  },
+  "admins": {
+   "ok": false,
+   "desc": "Bad Request: member list is inaccessible",
+   "names": []
+  }
+ },
+ "@morskieakvarium": {
+  "sendChatAction": {
+   "ok": false,
+   "desc": "Forbidden: bot is not a member of the channel chat"
+  },
+  "admins": {
+   "ok": false,
+   "desc": "Bad Request: member list is inaccessible",
+   "names": []
+  }
+ },
+ "@murmansk_moreprodukt": {
+  "sendChatAction": {
+   "ok": true,
+   "desc": null
+  },
+  "admins": {
+   "ok": true,
+   "desc": null,
+   "names": [
+    "Kkrraabb51_bot",
+    null,
+    "Kosha_Markova",
+    null,
+    "Vkus_morey51"
+   ]
+  }
+ }
+}
