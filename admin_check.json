@@ -1,0 +1,98 @@
+{
+ "admin_chat": {
+  "ok": true,
+  "result": {
+   "id": 1486595631,
+   "first_name": "Андрей",
+   "last_name": "Литвиненко",
+   "username": "Vkus_morey51",
+   "type": "private",
+   "can_send_gift": true,
+   "active_usernames": [
+    "Vkus_morey51"
+   ],
+   "accepted_gift_types": {
+    "unlimited_gifts": true,
+    "limited_gifts": true,
+    "unique_gifts": true,
+    "premium_subscription": true,
+    "gifts_from_channels": true
+   },
+   "personal_chat": {
+    "id": -1002075126363,
+    "title": "Вкус Морей | Морские прогулки в Териберке",
+    "username": "vkusmorey51",
+    "type": "channel"
+   },
+   "photo": {
+    "small_file_id": "AQADAgADaN8xG-YtKEkACAIAAy-mm1gABO-asjx2UA7QPQQ",
+    "small_file_unique_id": "AQADaN8xG-YtKEkAAQ",
+    "big_file_id": "AQADAgADaN8xG-YtKEkACAMAAy-mm1gABO-asjx2UA7QPQQ",
+    "big_file_unique_id": "AQADaN8xG-YtKEkB"
+   },
+   "max_reaction_count": 11,
+   "accent_color_id": 3
+  }
+ },
+ "@vkusmorey51": {
+  "ok": true,
+  "title": "Вкус Морей | Морские прогулки в Териберке",
+  "id": -1002075126363,
+  "perms": null
+ },
+ "@morskieakvarium": {
+  "ok": true,
+  "title": "Морские аквариумы и УЗВ | консультации | Москва",
+  "id": -1004436449563,
+  "perms": null
+ },
+ "@murmansk_moreprodukt": {
+  "ok": true,
+  "title": "Морепродукты Мурманска",
+  "id": -1004483044537,
+  "perms": null
+ },
+ "pending": [
+  {
+   "permalink": "https://www.instagram.com/reel/Df2tXDuIh4X/",
+   "date": "2026-11-17",
+   "chat": "@vkusmorey51"
+  },
+  {
+   "permalink": "https://www.instagram.com/reel/Df2ssCyIpqd/",
+   "date": "2026-11-17",
+   "chat": "@vkusmorey51"
+  },
+  {
+   "permalink": "https://www.instagram.com/reel/Df2sOQYoYHW/",
+   "date": "2026-11-17",
+   "chat": "@vkusmorey51"
+  },
+  {
+   "permalink": "https://www.instagram.com/reel/Df0Dnj0RQcZ/",
+   "date": "2026-11-16",
+   "chat": "@vkusmorey51"
+  },
+  {
+   "permalink": "https://www.instagram.com/reel/Dfxvor8xYXi/",
+   "date": "2026-11-15",
+   "chat": "@vkusmorey51"
+  },
+  {
+   "permalink": "https://www.instagram.com/reel/DfxcubsRhHZ/",
+   "date": "2026-11-15",
+   "chat": "@vkusmorey51"
+  },
+  {
+   "permalink": "https://www.instagram.com/reel/DfvDT0oxpQ7/",
+   "date": "2026-11-14",
+   "chat": "@vkusmorey51"
+  },
+  {
+   "permalink": "https://www.instagram.com/reel/Dfp81qoRN3F/",
+   "date": "2026-11-12",
+   "chat": "@vkusmorey51"
+  }
+ ],
+ "published_count": 4
+}
