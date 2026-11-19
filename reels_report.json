@@ -1,13 +1,13 @@
 {
  "log": [
   "delete-check 62 {\"ok\": false, \"error_code\": 400, \"description\": \"Bad Request: message to delete not found\"}",
-  "pending 10",
+  "pending 9",
   "chat @murmansk_moreprodukt status administrator can_post True",
-  "publishing https://www.instagram.com/reel/DfsSvXER3zo/ -> @murmansk_moreprodukt",
+  "publishing https://www.instagram.com/reel/DfpQTqIovvG/ -> @murmansk_moreprodukt",
   "yt-dlp rc 0",
-  "downloaded reel.mp4 9415347 bytes",
+  "downloaded reel.mp4 866286 bytes",
   "sendVideo ok= True",
-  "published to @murmansk_moreprodukt message_id 65",
+  "published to @murmansk_moreprodukt message_id 66",
   "gh_put ok reels_state.json"
  ]
 }
