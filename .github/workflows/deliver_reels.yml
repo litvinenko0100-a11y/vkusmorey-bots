@@ -1,0 +1,23 @@
+name: Deliver reels + prices
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -q requests yt-dlp
+      - name: Deliver
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PRODUCTS_TOKEN: ${{ secrets.PRODUCTS_TOKEN }}
+        run: python3 deliver_and_price.py
