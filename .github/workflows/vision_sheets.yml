@@ -1,0 +1,23 @@
+name: Vision sheets
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  vis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -q requests pillow transformers torch --extra-index-url https://download.pytorch.org/whl/cpu
+      - name: Vision
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: python3 vision_sheets.py
