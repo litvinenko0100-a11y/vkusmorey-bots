@@ -1,13 +1,23 @@
 {
  "log": [
   "delete-check 62 {\"ok\": false, \"error_code\": 400, \"description\": \"Bad Request: message to delete not found\"}",
-  "pending 9",
-  "chat @murmansk_moreprodukt status administrator can_post True",
-  "publishing https://www.instagram.com/reel/DfpQTqIovvG/ -> @murmansk_moreprodukt",
-  "yt-dlp rc 0",
-  "downloaded reel.mp4 866286 bytes",
-  "sendVideo ok= True",
-  "published to @murmansk_moreprodukt message_id 66",
-  "gh_put ok reels_state.json"
+  "pending 8",
+  "chat @vkusmorey51 not accessible: Bad Request: member list is inaccessible",
+  "skip https://www.instagram.com/reel/Df2tXDuIh4X/ -> @vkusmorey51",
+  "chat @vkusmorey51 not accessible: Bad Request: member list is inaccessible",
+  "skip https://www.instagram.com/reel/Df2ssCyIpqd/ -> @vkusmorey51",
+  "chat @vkusmorey51 not accessible: Bad Request: member list is inaccessible",
+  "skip https://www.instagram.com/reel/Df2sOQYoYHW/ -> @vkusmorey51",
+  "chat @vkusmorey51 not accessible: Bad Request: member list is inaccessible",
+  "skip https://www.instagram.com/reel/Df0Dnj0RQcZ/ -> @vkusmorey51",
+  "chat @vkusmorey51 not accessible: Bad Request: member list is inaccessible",
+  "skip https://www.instagram.com/reel/Dfxvor8xYXi/ -> @vkusmorey51",
+  "chat @vkusmorey51 not accessible: Bad Request: member list is inaccessible",
+  "skip https://www.instagram.com/reel/DfxcubsRhHZ/ -> @vkusmorey51",
+  "chat @vkusmorey51 not accessible: Bad Request: member list is inaccessible",
+  "skip https://www.instagram.com/reel/DfvDT0oxpQ7/ -> @vkusmorey51",
+  "chat @vkusmorey51 not accessible: Bad Request: member list is inaccessible",
+  "skip https://www.instagram.com/reel/Dfp81qoRN3F/ -> @vkusmorey51",
+  "no accessible chat, nothing published"
  ]
 }
